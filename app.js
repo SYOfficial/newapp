@@ -74,7 +74,7 @@ app.get('/weather', (request, response) => {
     });
 });
 
-app.get('*', (request, response) => {
+app.get('/404', (request, response) => {
     response.send({
     error: 'Page not found'
     })
