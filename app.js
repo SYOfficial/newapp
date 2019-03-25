@@ -24,7 +24,7 @@ hbs.registerHelper('message', (text) => {
     return text.toUpperCase();
 })
 
-app.use((request, response, next) => {
+/*app.use((request, response, next) => {
     var time = new Date().toString();
     //console.log(`${time}: ${request.method} ${request.url}`);
     var log = `${time}: ${request.method} ${request.url}`;
@@ -34,7 +34,7 @@ app.use((request, response, next) => {
         }
     });
     next();
-});
+});*/
 
 /*app.use((request, response, next) => {
     response.render('maintenance.hbs', {
