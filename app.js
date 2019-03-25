@@ -47,8 +47,6 @@ hbs.registerHelper('message', (text) => {
 app.get('/', (request, response) =>  {
     // response.send('<h1>Hello Express!</h1>');
     response.render('main.hbs', {
-        about: 'http://localhost:8080/info',
-        weather: 'http://localhost:8080/weather',
         title: 'Main page',
         year: new Date().getFullYear(),
         welcome: 'Welcome to the homepage!',
