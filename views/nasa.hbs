@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+    </script>
+</head>
+
+{{> header}}
+
+<style>
+    #desc {
+        color: blue;
+    }
+    body {
+        background-color:black;
+        margin:auto;
+        text-align:center;
+    }
+    h1 {
+        color:white;
+        font-family:"Arial";
+    }
+    p {
+        color:white;
+        font-family:"Arial";
+    }
+</style>
+
+<body>
+    <h1>NASA Images</h1>
+    <p>The image gallery.</p>
+    <img src="{{img1}}" alt="picture of Mars" />
+    <img src="{{img2}}" alt="picture of the Sun" />
+
+
+</body>
+
+{{> footer}}
+
+</html>

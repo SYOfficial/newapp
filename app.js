@@ -2,9 +2,13 @@ const express = require('express');
 
 const fs = require('fs');
 
+const request = require('request');
+
 var app = express();
 
 const hbs = require('hbs');
+
+const yargs = require('yargs')
 
 const port = process.env.PORT || 8080;
 
@@ -44,7 +48,7 @@ hbs.registerHelper('message', (text) => {
     });
 });*/
 
-app.get('/', (request, response) =>  {
+app.get('/', (request, response) => {
     // response.send('<h1>Hello Express!</h1>');
     response.render('main.hbs', {
         title: 'Main page',
@@ -65,17 +69,21 @@ app.get('/info', (request, response) => {
     });
 });
 
-app.get('/weather', (request, response) => {
-    response.render('weather.hbs', {
-        title: 'Weather page',
+var jsonData = require('./public/new.json');
+picofmars = jsonData.mars[0].marsimage
+
+app.get('/nasa', (request, response) => {
+    response.render('nasa.hbs', {
+        title: 'NASA page',
         year: new Date().getFullYear(),
-        welcome: 'Welcome to the weather page',
-        weatherinfo: '{"vancouver":[{"temperature":277.76,"windspeed":9.8}]}'
+        welcome: 'Welcome to the NASA page',
+        img1: picofmars,
+        img2: 'https://images-assets.nasa.gov/image/PIA18906/PIA18906~thumb.jpg'
     });
 });
 
 app.get('/404', (request, response) => {
     response.send({
-    error: 'Page not found'
+        error: 'Page not found'
     })
 })
